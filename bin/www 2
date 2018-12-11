@@ -8,6 +8,19 @@ var app = require('../app');
 var debug = require('debug')('matrix-node:server');
 var http = require('http');
 
+const mysql = require('mysql');
+
+// connection configurations
+const mc = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'kj0219',
+  database: 'matrix'
+});
+
+// connect to database
+mc.connect();
+
 /**
  * Get port from environment and store in Express.
  */
